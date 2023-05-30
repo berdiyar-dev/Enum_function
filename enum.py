@@ -1,14 +1,13 @@
-from ENUM import Enum
-try:
-    class dev(Enum):
-        games = ['c++','csharp','rust','java','c']
-        web = ['html','css','python','nodejs']
-        designer = ['xd','photoshop','figma']
-        app = ['kotlin','swift','fluter']
+from enum import Enum
 
-    devs = input("Dasturlash tilini kiriting: ").lower()
-    for i in dev:
-        if devs in i.value:
-            print("Kiritilgan dasturlash tilining nimaga ishlatilishi -> ",i.name)
-except:
-    print("ERROR")
+class languages(Enum):
+    colors = {
+    'Eng':'color', 'Uzb':'ranglar', 'Rus':'sivet'
+    }
+    clothes = {
+    'Eng':'clothes', 'Uzb':'kiyim', 'Rus':'odejda'
+    }
+choose_lang = input("Tilni tanlang: ").capitalize
+colors = input("Ranglarni kiriting: ")
+
+print(languages[colors].value[choose_lang])
